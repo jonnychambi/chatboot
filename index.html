@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escuela Data & AI | Transforma tu carrera</title>
+    <meta
+      name="description"
+      content="Formación práctica en Data Analyst para impulsar tu carrera con datos e inteligencia artificial."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #0068ff;
+        --secondary: #731cff;
+        --dark-1: #032457;
+        --dark-2: #053785;
+        --neutral: #f2f6fa;
+        --text-muted: #4b6080;
+        --accent-1: #ffb752;
+        --accent-2: #00edff;
+        --bg: #ffffff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        color: var(--dark-1);
+        background: var(--bg);
+        line-height: 1.55;
+      }
+      .container { width: min(1100px, 92%); margin: 0 auto; }
+      .hero {
+        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        color: #fff;
+        padding: 4.5rem 0 4rem;
+      }
+      .eyebrow { display: inline-block; font-weight: 600; letter-spacing: .03em; margin-bottom: .6rem; }
+      .hero h1 { font-size: clamp(2rem, 5vw, 3.25rem); margin: 0 0 .7rem; }
+      .hero p { max-width: 650px; margin: 0 0 1.4rem; font-size: 1.05rem; }
+      .btn {
+        display: inline-block;
+        border: 0;
+        padding: .95rem 1.35rem;
+        border-radius: .75rem;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform .2s ease, box-shadow .2s ease;
+      }
+      .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(3, 36, 87, .18); }
+      .btn--light { background: #fff; color: var(--primary); }
+      .btn--primary {
+        background: linear-gradient(120deg, var(--secondary), var(--primary));
+        color: #fff;
+        width: 100%;
+        cursor: pointer;
+      }
+      .lead-section { padding: 2rem 0; background: #fff; }
+      .lead-grid { display: grid; gap: 1.2rem; align-items: start; }
+      .lead-copy p { color: var(--text-muted); }
+      .checklist { padding-left: 1.1rem; }
+      .checklist li { margin-bottom: .4rem; }
+      .lead-form {
+        background: var(--neutral);
+        border: 1px solid #dbe7f6;
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+      .lead-form h3 { margin-top: .25rem; }
+      .lead-form label, .lead-form legend { font-weight: 600; font-size: .92rem; display: block; margin-top: .6rem; }
+      .lead-form input, .lead-form select {
+        width: 100%;
+        padding: .72rem;
+        border-radius: .62rem;
+        border: 1px solid #bfd4ee;
+        margin-top: .3rem;
+        font: inherit;
+      }
+      .lead-form fieldset {
+        border: 1px solid #bfd4ee;
+        border-radius: .6rem;
+        padding: .65rem;
+        margin: .8rem 0;
+      }
+      .lead-form fieldset label { font-weight: 500; margin-top: .5rem; }
+      .lead-form fieldset input { width: auto; margin-right: .35rem; }
+      .section { padding: 3.6rem 0; }
+      .section--light { background: var(--neutral); }
+      .highlight { color: var(--dark-2); font-weight: 600; font-size: 1.1rem; }
+      .cards { display: grid; gap: 1rem; margin-top: 1.2rem; }
+      .card {
+        background: #fff;
+        border: 1px solid #dce8f8;
+        border-radius: .9rem;
+        padding: 1rem;
+        box-shadow: 0 8px 30px rgba(5, 55, 133, .05);
+      }
+      .roadmap { display: grid; gap: .8rem; margin-top: 1.2rem; }
+      .roadmap__item {
+        position: relative;
+        padding: .9rem .9rem .9rem 2.1rem;
+        border: 1px solid #dce8f8;
+        border-radius: .75rem;
+        background: #fff;
+      }
+      .roadmap__item::before {
+        content: '';
+        position: absolute;
+        left: .8rem;
+        top: 50%;
+        width: .65rem;
+        height: .65rem;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background: linear-gradient(120deg, var(--accent-2), var(--accent-1));
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .8rem;
+        text-align: center;
+        margin-top: 1.2rem;
+      }
+      .metrics strong { font-size: 1.6rem; color: var(--primary); display: block; }
+      .metrics span { color: var(--text-muted); font-size: .9rem; }
+      .final-cta {
+        padding: 3.8rem 0;
+        text-align: center;
+        background: linear-gradient(120deg, var(--secondary), var(--primary));
+        color: #fff;
+      }
+      .reveal { opacity: 0; transform: translateY(16px); transition: all .6s ease; }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+      @media (min-width: 840px) {
+        .lead-grid { grid-template-columns: 1.05fr .95fr; gap: 2rem; }
+        .lead-form { position: sticky; top: 1rem; }
+        .cards--4 { grid-template-columns: repeat(2, 1fr); }
+        .cards--3 { grid-template-columns: repeat(3, 1fr); }
+        .roadmap { grid-template-columns: repeat(2, 1fr); }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero" id="inicio">
+      <div class="container hero__content reveal">
+        <span class="eyebrow">Escuela de Data & AI</span>
+        <h1>Lidera en Datos e IA con la formación más completa</h1>
+        <p>
+          Transforma tu carrera y conviértete en Data Analyst con habilidades
+          reales y enfoque práctico.
+        </p>
+        <a href="#formulario" class="btn btn--light">Quiero transformar mi carrera</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="lead-section" id="formulario">
+        <div class="container lead-grid">
+          <article class="lead-copy reveal">
+            <h2>Transforma tu futuro con datos</h2>
+            <p>
+              La inteligencia artificial necesita inteligencia humana. Ese eres tú.
+              Da el siguiente paso con una formación diseñada para convertir
+              potencial en oportunidades reales.
+            </p>
+            <ul class="checklist">
+              <li>Mentoría de expertos en activo</li>
+              <li>Proyectos aplicados a negocios reales</li>
+              <li>Acompañamiento para impulsar tu perfil profesional</li>
+            </ul>
+          </article>
+
+          <form class="lead-form reveal" action="#" method="post" novalidate>
+            <h3>Recibe asesoría personalizada</h3>
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+
+            <label for="apellidos">Apellidos</label>
+            <input id="apellidos" name="apellidos" type="text" placeholder="Tus apellidos" required />
+
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" placeholder="+52 55 0000 0000" required />
+
+            <label for="correo">Correo</label>
+            <input id="correo" name="correo" type="email" placeholder="nombre@email.com" required />
+
+            <label for="curso">Curso de Interés</label>
+            <select id="curso" name="curso" required>
+              <option value="" selected disabled>Selecciona un programa</option>
+              <option>Data Analyst</option>
+              <option>Data Science</option>
+              <option>Business Intelligence</option>
+              <option>Inteligencia Artificial aplicada</option>
+            </select>
+
+            <fieldset>
+              <legend>Nivel de Interés</legend>
+              <label><input type="radio" name="interes" value="ahora" required /> Ahora mismo</label>
+              <label><input type="radio" name="interes" value="mes" /> Próximo mes</label>
+              <label><input type="radio" name="interes" value="tres-meses" /> En tres meses o más</label>
+              <label><input type="radio" name="interes" value="info" /> Solo información</label>
+            </fieldset>
+
+            <button class="btn btn--primary" type="submit">Recibir información</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section section--light">
+        <div class="container reveal">
+          <h2>¿Por qué Data Analyst?</h2>
+          <p class="highlight">El dato no solo predice, también transforma.</p>
+          <div class="cards cards--4">
+            <article class="card">Alta demanda laboral</article>
+            <article class="card">Toma de decisiones estratégicas</article>
+            <article class="card">Salarios competitivos</article>
+            <article class="card">Impacto en empresas reales</article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container reveal">
+          <h2>Ruta de Aprendizaje Data Analyst</h2>
+          <div class="roadmap">
+            <div class="roadmap__item">Fundamentos de Data</div>
+            <div class="roadmap__item">Excel & SQL</div>
+            <div class="roadmap__item">Python para análisis</div>
+            <div class="roadmap__item">Power BI / Visualización</div>
+            <div class="roadmap__item">Proyectos reales</div>
+            <div class="roadmap__item">Certificación</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--light">
+        <div class="container reveal">
+          <h2>Diferenciadores DMC</h2>
+          <div class="cards cards--3">
+            <article class="card"><strong>Maestros de Datos</strong><p>Docentes líderes en industria.</p></article>
+            <article class="card"><strong>Learning Agile</strong><p>Avanza por sprints y objetivos medibles.</p></article>
+            <article class="card"><strong>Casos reales</strong><p>Aprende con desafíos de negocio actuales.</p></article>
+            <article class="card"><strong>Comunidad activa</strong><p>Networking y soporte continuo.</p></article>
+            <article class="card"><strong>+40,000 alumnos</strong><p>Historias de crecimiento profesional.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container reveal">
+          <h2>Prueba social</h2>
+          <div class="cards cards--3 testimonios">
+            <article class="card">
+              <p>“Pasé de tener dudas a liderar dashboards en mi empresa en menos de un año.”</p>
+              <strong>Laura, Data Analyst Jr.</strong>
+            </article>
+            <article class="card">
+              <p>“Los proyectos reales me dieron experiencia para conseguir mi primera oportunidad en analytics.”</p>
+              <strong>Javier, BI Specialist</strong>
+            </article>
+            <article class="card">
+              <p>“Aquí entendí que los datos pueden cambiar decisiones, equipos y resultados.”</p>
+              <strong>Daniela, Product Analyst</strong>
+            </article>
+          </div>
+          <div class="metrics">
+            <div><strong>+16</strong><span>años experiencia</span></div>
+            <div><strong>+150</strong><span>programas</span></div>
+            <div><strong>4.7/5</strong><span>satisfacción</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="container reveal">
+          <h2>De analista a líder: empieza hoy</h2>
+          <a href="#formulario" class="btn btn--light">Quiero más información</a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+  </body>
+</html>
